@@ -27,11 +27,10 @@ Route::get('/users', function () {
 //     return view('posts');
 // });
 
-Route::controller(PostController::class)->group(function(){
-    Route::get('/posts','ShowUsers');
-    Route::get('/posts/create','createPost');
-    Route::get('/posts/edit/{id}','createPost');
-    Route::get('/posts/edit/{id}','createPost');
-});
-
-Route::get('user_profile',UserProfileController::class);
+// Route::controller(PostController::class)->group(function(){
+//     Route::get('/posts','ShowUsers');
+//     Route::get('/posts/create','createPost');
+//     Route::get('/posts/edit/{id}','createPost');
+//     Route::get('/posts/edit/{id}','createPost');
+// });
+Route::resource('posts',PostController::class);
